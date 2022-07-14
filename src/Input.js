@@ -1,18 +1,13 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import colorNames from 'colornames'
 
-const Input = ({ colorValue, setColorValue, setHexValue }) => {
-
-  const inputRef = useRef();
-
-
+const Input = ({ colorValue, setColorValue, setHexValue, isDarkText, setIsDarkText }) => {
 
   return (
-    <form className="addForm" onSubmit={(e) => e.preventDefault()} >
+    <form onSubmit={(e) => e.preventDefault()} >
         <label htmlFor="addColor">Add Color Name: </label>
         <input 
             autoFocus
-            ref={inputRef}
             type="text"
             placeholder="Add Color Name"
             required
@@ -24,6 +19,12 @@ const Input = ({ colorValue, setColorValue, setHexValue }) => {
                 setHexValue(colorNames(e.target.value) )   
             }}
         />
+        <button className="btn"
+                type="button"
+                onClick={() => setIsDarkText(!isDarkText)}
+            >
+                Toggle Text Color
+            </button>
     </form>
   )
 }
