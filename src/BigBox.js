@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BigBox = ({ colorValue }) => {
+const BigBox = ({ colorValue, hexValue }) => {
 
   // const colorAPI = 'http://www.colourlovers.com/api'
 
@@ -13,6 +13,7 @@ const BigBox = ({ colorValue }) => {
         style={{ backgroundColor: colorValue }}
     >
         <p>{colorValue ? colorValue : "Empty Value"}</p>
+        <p>{hexValue ? hexValue : null }</p>
     </section>
   )
 }
